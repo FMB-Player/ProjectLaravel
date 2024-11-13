@@ -33,7 +33,7 @@ models:
         contacto_propietario str
     4. tipo_propiedad (normalización)       .NOT_STARTED
         tipo_propiedad str
-    5. propiedad                            .NOT_STARTED
+    5. propiedad                            .IN_PROCESS (Franco)
         dirección str
         tipo_propiedad (fk) int
         propietario (fk) int
