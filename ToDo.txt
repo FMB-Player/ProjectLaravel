@@ -1,0 +1,109 @@
+Flags: TODO: <task>, FIXME: <file>, .NOT_STARTED, .NOT_READY <req>, .IN_PROCESS <person>, .DONE
+
+TODO:1. min 6 attributes (+id).               .DONE
+TODO:2. date time                             .NOT_STARTED  (fecha_renta@renta)
+TODO:3. int                                   .NOT_STARTED  (precio_renta@renta)
+TODO:4. bool                                  .NOT_STARTED  (reservada@renta)
+TODO:5. str                                   .DONE         (nombre_cliente@cliente)
+TODO:6. str(email)                            .NOT_STARTED  (contacto_propietario@propietario)
+TODO:7. select v option                       .NOT_STARTED  (tipo_propiedad@propiedad)
+TODO:8. validate ALL (client optional)        .NOT_STARTED  (0/6create, 0/6update, 0/6delete - 1/6create, 0/6update, 0/6delete)
+TODO:9. view message process.                 .NOT_STARTED  (1/6create, 0/6update, 0/6delete)
+TODO:10. buttons HOME, LIST, CREATE.          .NOT_STARTED  (menu@views)
+TODO:11. min 10 registers.                    .NOT_READY (req migrate:fresh)  (0/10)
+
+TODO: + Documentation.
+    Primero se inicia una base de datos, en nuestro caso mysql en XMAPP de manera local, esto para poder iniciar la primer migración sin necesidad de ejecutar el comando "php artisan migrate" y más importante poder testear las vistas de forma directa, pero no es realmente necesario.
+    El proyecto inicia tras el comando de composer "Composer create-project --prefer-dist laravel/laravel TrabajoAplicaionesMoviles", en nuestro caso.
+    Luego se crean los modelos con sus respectivos controladores y vistas. Todas las vistas constan de un diseño general: Índice, vista de tabla, formulario de creación y formulario de edición (que podrían juntarse en una vista pero sumaría complejidad, que puede hacer los archivos más confusos de manejar).
+    Tras crear los elementos a usar, se empieza a codear cada parte, ya sea diseño de vista, el manejo de los controladores, middleware de usarse, estructuración de modelos... que una vez definidos llevan a crear una nueva migración, la cual reflejará los diseños en la base de datos en la que se trabaje y permitirá la creación y manipulación de registros.                    .IN_PROCESS (Franco)
+
+models:
+    1. renta                                .NOT_STARTED
+        fecha_renta date time
+        precio_renta int
+        isReservada bool
+        propiedad (fk) int
+        cliente (fk) int
+    2. cliente                              .DONE
+        nombre_cliente str
+        tel_cliente int
+    3. propietario                          .NOT_STARTED
+        nombre_propietario str
+        contacto_propietario str
+    4. tipo_propiedad (normalización)       .NOT_STARTED
+        tipo_propiedad str
+    5. propiedad                            .NOT_STARTED
+        dirección str
+        tipo_propiedad (fk) int
+        propietario (fk) int
+
+views:
+    1.renta                                 .NOT_STARTED
+        index
+        create (form)
+        show (table)
+        edit (form)
+    2.cliente                               .NOT_STARTED
+        index
+        create (form)
+        show (table)
+        edit (form)
+    3.propietario                           .NOT_STARTED
+        index
+        create (form)
+        show (table)
+        edit (form)
+    4.propiedad                             .NOT_STARTED
+        index
+        create (form)
+        show (table)
+        edit (form)
+    5.tipo_propiedad                        .NOT_STARTED
+        index
+        create (form)
+        show (table)
+        edit (form)
+    6.main                                  .NOT_STARTED
+        menu (navbar)
+        footer (footer)
+
+
+commands:
+php artisan make:model Renta                                            .DONE
+php artisan make:model Cliente                                          .DONE
+php artisan make:model Propietario                                      .DONE
+php artisan make:model Propiedad                                        .DONE
+php artisan make:model Tipo_Propiedad                                   .DONE
+
+php artisan make:controller RentaController --resource                  .DONE
+php artisan make:controller ClienteController --resource                .DONE
+php artisan make:controller PropietarioController --resource            .DONE
+php artisan make:controller PropiedadController --resource              .DONE
+php artisan make:controller Tipo_PropiedadController --resource         .DONE
+
+php artisan make:view renta.index                                       .DONE
+php artisan make:view renta.create                                      .DONE
+php artisan make:view renta.show                                        .DONE
+php artisan make:view renta.edit                                        .DONE
+php artisan make:view cliente.index                                     .DONE
+php artisan make:view cliente.create                                    .DONE
+php artisan make:view cliente.show                                      .DONE
+php artisan make:view cliente.edit                                      .DONE
+php artisan make:view propietario.index                                 .DONE
+php artisan make:view propietario.create                                .DONE
+php artisan make:view propietario.show                                  .DONE
+php artisan make:view propietario.edit                                  .DONE
+php artisan make:view propiedad.index                                   .DONE
+php artisan make:view propiedad.create                                  .DONE
+php artisan make:view propiedad.show                                    .DONE
+php artisan make:view propiedad.edit                                    .DONE
+php artisan make:view tipo_propiedad.index                              .DONE
+php artisan make:view tipo_propiedad.create                             .DONE
+php artisan make:view tipo_propiedad.show                               .DONE
+php artisan make:view tipo_propiedad.edit                               .DONE
+php artisan make:view menu                                              .DONE
+php artisan make:view footer                                            .DONE
+
+php artisan schema:dump                                                 .NOT_READY (req models)
+php artisan migrate:fresh                                               .NOT_READY (req schema:dump)
