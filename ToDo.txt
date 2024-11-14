@@ -19,7 +19,7 @@ TODO: + Documentation.
     Tras crear los elementos a usar, se empieza a codear cada parte, ya sea diseño de vista, el manejo de los controladores, middleware de usarse, estructuración de modelos... que una vez definidos llevan a crear una nueva migración, la cual reflejará los diseños en la base de datos en la que se trabaje y permitirá la creación y manipulación de registros.                    .IN_PROCESS (Franco)
 
 tables:
-    1. renta                                .NOT_STARTED
+    1. renta                                .IN_PROCESS (Franco)
         fecha_renta date time
         precio_renta int
         isReservada bool
@@ -28,12 +28,12 @@ tables:
     2. cliente                              .DONE
         nombre_cliente str
         tel_cliente int
-    3. propietario                          .NOT_STARTED
+    3. propietario                          .IN_PROCESS (Franco)
         nombre_propietario str
         contacto_propietario str
-    4. tipo_propiedad (normalización)       .NOT_STARTED
+    4. tipo_propiedad (normalización)       .IN_PROCESS (Franco)
         tipo_propiedad str
-    5. propiedad                            .IN_PROCESS (Franco)
+    5. propiedad                            .DONE
         dirección str
         tipo_propiedad (fk) int
         propietario (fk) int

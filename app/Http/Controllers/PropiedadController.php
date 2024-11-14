@@ -56,7 +56,7 @@ class PropiedadController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         $propiedad = Propiedad::findOrFail($id);
 
@@ -66,16 +66,28 @@ class PropiedadController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'direccion' => 'required|string|max:80',
+            'id_tipo_propiedad' => 'required|integer|exists:tipo_propiedad,id_tipo_propiedad',
+            'id_propietario' => 'required|integer|exists:propietario,id_propietario'
+        ]);
+
+        $propiedad = Propiedad::findOrFail($id);
+        $propiedad->direccion = $request->direccion;
+        $propiedad->id_tipo_propiedad = $request->id_tipo_propiedad;
+        $propiedad->id_propietario = $request->id_propietario;
+
+        return redirect()->route('Propiedades.index')->with('success', 'Propiedad actualizada.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Propiedad $propiedad)
     {
-        //
+        $propiedad->delete();
+        return redirect()->route('Propiedades.index')->with('success', 'Propiedad eliminada.');
     }
 }
