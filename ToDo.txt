@@ -105,5 +105,11 @@ php artisan make:view tipo_propiedad.edit                               .DONE
 php artisan make:view menu                                              .DONE
 php artisan make:view footer                                            .DONE
 
-php artisan schema:dump                                                 .NOT_READY (req models)
+php artisan schema:dump                                                 .NOT_STARTED (DEPRECATED)
+
+php artisan make:migration create_renta_table --create=renta                        .IN_PROCESS (Franco)
+php artisan make:migration create_cliente_table --create=cliente                    .IN_PROCESS (Franco)
+php artisan make:migration create_propietario_table --create=propietario            .IN_PROCESS (Franco)
+php artisan make:migration create_propiedad_table --create=propiedad                .IN_PROCESS (Franco)
+php artisan make:migration create_tipo_propiedad_table --create=tipo_propiedad      .IN_PROCESS (Franco)
 php artisan migrate:fresh                                               .NOT_READY (req schema:dump)

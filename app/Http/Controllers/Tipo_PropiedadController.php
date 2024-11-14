@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Propiedad;
 use App\Models\Tipo_Propiedad;
 use Illuminate\Http\Request;
 
@@ -13,7 +12,7 @@ class Tipo_PropiedadController extends Controller
      */
     public function index()
     {
-        $tipo_propiedades = Propiedad::all();
+        $tipo_propiedades = Tipo_Propiedad::all();
         return view('tipo_propiedad.index', compact('tipo_propiedades'));
     }
 
@@ -34,7 +33,7 @@ class Tipo_PropiedadController extends Controller
             'tipo_propiedad' => 'required|string|max:80'
         ]);
 
-        $tipo_propiedad = new Propiedad;
+        $tipo_propiedad = new Tipo_Propiedad();
         $tipo_propiedad->tipo_propiedad = $request->input('tipo_propiedad');
         $tipo_propiedad->save();
 
