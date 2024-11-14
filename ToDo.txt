@@ -105,7 +105,7 @@ php artisan make:view tipo_propiedad.edit                               .DONE
 php artisan make:view menu                                              .DONE
 php artisan make:view footer                                            .DONE
 
--- php artisan schema:dump                                              .NOT_STARTED (DEPRECATED)
+-- php artisan schema:dump                                              .NOT_STARTED (No funka, reemplazado por trabajo cuasi-manual)
 
 php artisan make:migration create_renta_table --create=renta                        .DONE
 php artisan make:migration create_cliente_table --create=cliente                    .DONE
