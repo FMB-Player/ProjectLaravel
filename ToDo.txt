@@ -31,7 +31,7 @@ tables:
     3. propietario                          .IN_PROCESS (Franco)
         nombre_propietario str
         contacto_propietario str
-    4. tipo_propiedad (normalización)       .IN_PROCESS (Franco)
+    4. tipo_propiedad (normalización)       .DONE
         tipo_propiedad str
     5. propiedad                            .DONE
         dirección str
