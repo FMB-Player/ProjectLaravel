@@ -25,7 +25,7 @@ tables:
         isReservada bool
         propiedad (fk) int
         cliente (fk) int
-    2. cliente                              .IN_PROCESS (Franco)
+    2. cliente                              .DONE
         nombre_cliente str
         tel_cliente int
     3. propietario                          .NOT_STARTED

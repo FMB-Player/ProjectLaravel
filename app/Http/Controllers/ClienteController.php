@@ -54,32 +54,45 @@ class ClienteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Cliente $cliente)
     {
-        //
+        return view('clientes.show', compact('cliente'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+
+        return view('clientes.edit', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nombre_cliente' => 'required|string|max:80',
+            'tel_cliente' => 'required|regex:/^\d{13}$/',
+        ]);
+
+        $cliente = Cliente::findOrFail($id);
+        $cliente->nombre_cliente = $request->nombre_cliente;
+        $cliente->tel_cliente = $request->tel_cliente;
+
+        return redirect()->route('clientes.index')->with('success', 'Cliente actualizado.');
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Cliente $cliente)
     {
-        //
+        $cliente->delete();
+        return redirect()->route('clientes.index')->with('success', 'Cliente dado de baja.');
     }
 }
