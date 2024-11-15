@@ -109,11 +109,11 @@ php artisan make:view footer                                            .DONE
 
 -- php artisan schema:dump                                              .NOT_STARTED (No funka, reemplazado por trabajo cuasi-manual)
 
-php artisan make:migration create_renta_table --create=renta                        .DONE
-php artisan make:migration create_cliente_table --create=cliente                    .DONE
-php artisan make:migration create_propietario_table --create=propietario            .DONE
-php artisan make:migration create_propiedad_table --create=propiedad                .DONE
-php artisan make:migration create_tipo_propiedad_table --create=tipo_propiedad      .DONE
+php artisan make:migration create_renta_table                           .DONE
+php artisan make:migration create_cliente_table                         .DONE
+php artisan make:migration create_propietario_table                     .DONE
+php artisan make:migration create_propiedad_table                       .DONE
+php artisan make:migration create_tipo_propiedad_table                  .DONE
 
 
 php artisan migrate:fresh                                               .DONE
