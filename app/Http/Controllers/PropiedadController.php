@@ -31,12 +31,14 @@ class PropiedadController extends Controller
     {
         $request->validate([
             'direccion' => 'required|string|max:80',
+            'isReservada' => 'required|boolean',
             'id_tipo_propiedad' => 'required|integer|exists:tipo_propiedad,id_tipo_propiedad',
             'id_propietario' => 'required|integer|exists:propietario,id_propietario'
         ]);
 
         $propiedad = new Propiedad;
         $propiedad->direccion = $request->input('direccion');
+        $propiedad->isReservada = $request->input('isReservada');
         $propiedad->id_tipo_propiedad = $request->input('id_tipo_propiedad');
         $propiedad->id_propietario = $request->input('id_propietario');
         $propiedad->save();
@@ -70,12 +72,14 @@ class PropiedadController extends Controller
     {
         $request->validate([
             'direccion' => 'required|string|max:80',
+            'isReservada' => 'required|boolean',
             'id_tipo_propiedad' => 'required|integer|exists:tipo_propiedad,id_tipo_propiedad',
             'id_propietario' => 'required|integer|exists:propietario,id_propietario'
         ]);
 
         $propiedad = Propiedad::findOrFail($id);
         $propiedad->direccion = $request->direccion;
+        $propiedad->isReservada = $request->isReservada;
         $propiedad->id_tipo_propiedad = $request->id_tipo_propiedad;
         $propiedad->id_propietario = $request->id_propietario;
 

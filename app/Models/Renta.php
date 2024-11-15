@@ -15,7 +15,6 @@ class Renta extends Model
     protected $fillable = [
         'fecha_renta',
         'precio_renta',
-        'isReservada',
         'id_propiedad',
         'id_cliente',
     ];

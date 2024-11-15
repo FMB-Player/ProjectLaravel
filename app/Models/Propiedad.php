@@ -15,6 +15,7 @@ class Propiedad extends Model
 
     protected $fillable = [
         'direccion',
+        'isReservada',
         'id_tipo_propiedad',
         'id_propietario',
     ];

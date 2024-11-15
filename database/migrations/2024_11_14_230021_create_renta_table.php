@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id('id_renta');
             $table->date('fecha_renta');
             $table->decimal('precio_renta');
-            $table->boolean('isReservada');
             $table->foreignId('id_propiedad')->constrained('propiedad');
             $table->foreignId('id_cliente')->constrained('cliente');
             $table->timestamps();

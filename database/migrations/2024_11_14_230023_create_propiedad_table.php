@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('propiedad', function (Blueprint $table) {
             $table->id('id_propiedad');
             $table->string('direccion');
+            $table->boolean('isReservada');
             $table->foreignId('id_tipo_propiedad')->constrained('tipo_propiedad');
             $table->foreignId('id_propietario')->constrained('propietario');
             $table->timestamps();

@@ -30,9 +30,8 @@ class RentaController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'fecha_renta' => 'required|date',
+            'fecha_renta' => 'nullable|date|after:today',
             'precio_renta' => 'required|numeric|gt:0',
-            'isReservada' => 'required|boolean',
             'id_propiedad' => 'required|integer|exists:propiedad,id_propiedad',
             'id_cliente' => 'required|integer|exists:cliente,id_cliente',
         ]);
@@ -40,7 +39,6 @@ class RentaController extends Controller
         $renta = new Renta;
         $renta->fecha_renta = $request->input('fecha_renta');
         $renta->precio_renta = $request->input('precio_renta');
-        $renta->isReservada = $request->input('isReservada');
         $renta->id_propiedad = $request->input('id_propiedad');
         $renta->id_cliente = $request->input('id_cliente');
         $renta->save();
@@ -72,9 +70,8 @@ class RentaController extends Controller
     public function update(Request $request, string $id)
     {
         $request->validate([
-            'fecha_renta' => 'required|date',
+            'fecha_renta' => 'nullable|date|after:today',
             'precio_renta' => 'required|numeric|gt:0',
-            'isReservada' => 'required|boolean',
             'id_propiedad' => 'required|integer|exists:propiedad,id_propiedad',
             'id_cliente' => 'required|integer|exists:cliente,id_cliente',
         ]);
@@ -82,7 +79,6 @@ class RentaController extends Controller
         $renta = Renta::findOrFail($id);
         $renta->fecha_renta = $request->input('fecha_renta');
         $renta->precio_renta = $request->input('precio_renta');
-        $renta->isReservada = $request->input('isReservada');
         $renta->id_propiedad = $request->input('id_propiedad');
         $renta->id_cliente = $request->input('id_cliente');
         $renta->save();
