@@ -104,6 +104,7 @@ php artisan make:view tipo_propiedad.index                              .DONE
 php artisan make:view tipo_propiedad.create                             .DONE
 php artisan make:view tipo_propiedad.show                               .DONE
 php artisan make:view tipo_propiedad.edit                               .DONE
+php artisan make:view index                                             .DONE
 php artisan make:view menu                                              .DONE
 php artisan make:view footer                                            .DONE
 
