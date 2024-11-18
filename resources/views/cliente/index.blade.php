@@ -1,3 +1,3 @@
-<div>
-    <!-- Simplicity is an acquired taste. - Katharine Gerould -->
-</div>
+@component('index')
+    Listado de clientes
+@endcomponent

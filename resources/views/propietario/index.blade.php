@@ -1,3 +1,3 @@
-<div>
-    <!-- An unexamined life is not worth living. - Socrates -->
-</div>
+@component('index')
+    Listado de propietarios
+@endcomponent

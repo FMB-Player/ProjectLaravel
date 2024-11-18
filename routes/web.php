@@ -8,7 +8,7 @@ use App\Http\Controllers\PropietarioController;
 use App\Http\Controllers\Tipo_PropiedadController;
 
 Route::get('/', function () {
-    return view('index');
+    return redirect('Clientes');
 });
 
 Route::resource('/Rentas', RentaController::class);
