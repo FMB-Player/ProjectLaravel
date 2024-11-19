@@ -119,4 +119,4 @@ php artisan make:migration create_tipo_propiedad_table                  .DONE
 
 php artisan migrate:fresh                                               .DONE
 
-FIXME: las rutas dejaron de funcionar en algún punto de hacer el menú y el index, ahora se retorna la vista SIN pasar por routes. (Problema local Franco)
+TODO: Vistas del frontend. Las vistas parciales son solo por placeholder, cambiar como se vea necesario.
