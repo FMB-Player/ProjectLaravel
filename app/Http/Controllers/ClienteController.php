@@ -44,6 +44,7 @@ class ClienteController extends Controller
             'telefono' => 'required|string|regex:/^\d{13}$/',
             'email' => 'required|email|max:120',
             'fecha_ingreso' => 'required|date|lte:now',
+            'id_ingreso' => 'required|exists:Cateogria_ingreso,id_ingreso',
         ]);
 
         $cliente = new Cliente;
@@ -53,6 +54,7 @@ class ClienteController extends Controller
         $cliente->telefono = $request->input('telefono');
         $cliente->email = $request->input('email');
         $cliente->fecha_ingreso = $request->input('fecha_ingreso');
+        $cliente->id_ingreso = $request->input('id_ingreso');
         $cliente->save();
 
         return redirect()->route('Cliente.index')->with('success', 'Cliente registrado exitosamente.');
@@ -98,6 +100,7 @@ class ClienteController extends Controller
             'telefono' => 'required|string|regex:/^\d{13}$/',
             'email' => 'required|email|max:120',
             'fecha_ingreso' => 'required|date|lte:now',
+            'id_ingreso' => 'required|exists:Cateogria_ingreso,id_ingreso',
         ]);
 
         $cliente = Cliente::findOrFail($id);
@@ -107,6 +110,7 @@ class ClienteController extends Controller
         $cliente->telefono = $request->input('telefono');
         $cliente->email = $request->input('email');
         $cliente->fecha_ingreso = $request->input('fecha_ingreso');
+        $cliente->id_ingreso = $request->input('id_ingreso');
         $cliente->save();
 
         return redirect()->route('Cliente.index')->with('success', 'Cliente actualizado.');;
