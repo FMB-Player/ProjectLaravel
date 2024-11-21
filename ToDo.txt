@@ -1,16 +1,16 @@
 Flags: TODO: <task>, FIXME: <file>, .NOT_STARTED, .NOT_READY <req>, .IN_PROCESS <person>, .DONE
 
-TODO:1. min 6 attributes (+id).               .NOT_STARTED
-TODO:2. date time                             .NOT_STARTED
-TODO:3. int                                   .NOT_STARTED
-TODO:4. bool                                  .NOT_STARTED
-TODO:5. str                                   .NOT_STARTED
-TODO:6. str(email)                            .NOT_STARTED
-TODO:7. select v option                       .NOT_STARTED
-TODO:8. validate ALL (client optional)        .NOT_STARTED
-TODO:9. view message process.                 .NOT_STARTED
-TODO:10. buttons HOME, LIST, CREATE.          .NOT_STARTED
-TODO:11. min 10 registers.                    .NOT_STARTED
+TODO:1. min 6 attributes (+id).               .DONE
+TODO:2. date time                             .DONE (fecha_ingreso@Cliente)
+TODO:3. int                                   .DONE (edad@Cliente)
+TODO:4. bool                                  .DONE (seguro@Cliente)
+TODO:5. str                                   .DONE (nombre@Categoria_ingreso)
+TODO:6. str(email)                            .DONE (email@Cliente)
+TODO:7. select v option                       .IN_PROCESS (Soto) (Categoria@Cliente.edit)
+TODO:8. validate ALL (client optional)        .IN_PROCESS (Franco)
+TODO:9. view message process.                 .IN_PROCESS (Soto)
+TODO:10. buttons HOME, LIST, CREATE.          .IN_PROCESS (Soto)
+TODO:11. min 10 registers.                    .NOT_READY (Backend)
 
 TODO: + Documentation.
     Primero se iniciaría* una base de datos, en nuestro caso común mysql en XMAPP de manera local, esto para poder iniciar la primer migración al crear el proyecto con el comando de composer sin necesidad de ejecutar el comando "php artisan migrate" y más importante poder testear las vistas de forma directa, pero no es realmente necesario y solo es para probar que se puede servir el proyecto con "php artisan serve" y ver la vista welcome default de laravel.
@@ -28,23 +28,36 @@ tables:
         email   String
         edad    int
         seguro  bool
+        fecha_ingreso   datetime
         id_ingreso(FK)  int
 
     2. Categoria_ingreso
         id_ingreso  int
         nombre  String
 
-views:              (.NOT_STARTED)
+views:
+    1.Cliente               .IN_PROCESS (Soto)
+        index (table)
+        create (form)
+        show (element)
+        edit (form)
+    2. Categoria_ingreso    .IN_PROCESS (Soto)
+        index (table)
+        create (form)
+        show (element)
+        edit (form)
 
 
 commands:
-php artisan make:migration create_clientes_table --create=clientes
-php artisan make:migration create_categoria_ingreso_table --create=Categoria_ingreso
+php artisan make:migration create_clientes_table --create=clientes                      .DONE
+php artisan make:migration create_categoria_ingreso_table --create=categoria_ingreso    .DONE
 
-php artisan make:model Cliente
-php artisan make:model Categoria_ingreso
+php artisan make:model Cliente                                                          .DONE
+php artisan make:model Categoria_ingreso                                                .DONE
 
-php artisan make:controller ClienteController
-php artisan make:controller Categoria_ingresoController
+php artisan make:controller ClienteController --resource                                .DONE
+php artisan make:controller Categoria_ingresoController --resource                      .DONE
 
-php artisan migrate:fresh
+php artisan migrate:fresh                                                               .NOT_STARTED
+
+TODO: Definir la ruta "/".
