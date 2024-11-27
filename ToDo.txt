@@ -54,4 +54,4 @@ php artisan make:controller Categoria_ingresoController --resource              
 
 composer require nesbot/carbon
 
-php artisan migrate:fresh                                                               .NOT_STARTED
+php artisan migrate:fresh                                                               .DONE

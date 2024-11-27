@@ -33,6 +33,10 @@
             </div>
             <div class="row mt-3">
                 <div class="col-md-12">
+                    @if ($clientes->isEmpty())
+                        <p class="text-center">Aún no hay clientes registrados.</p>
+
+                    @else
                     <table class="table">
                         <thead class="thead-dark">
                             <tr>
@@ -90,6 +94,8 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <p class="text-center">Hay {{ $clientes->count() }} cliente(s) registrado(s).</p>
+                    @endif
                 </div>
             </div>
         </div>
