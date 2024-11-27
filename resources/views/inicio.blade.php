@@ -48,9 +48,10 @@
                         </thead>
                         <tbody>
                             @foreach($clientes as $cliente)
+                            {{-- Formateo para la tabla (Fecha, Teléfono) --}}
                             @php
-                            $fechaCarbon = Carbon::createFromFormat('Y-m-d', $cliente->fecha_ingreso);
-                            $fecha = $fechaCarbon->format('M, d. Y');
+                            $CarbonFormat = Carbon::createFromFormat('Y-m-d', $cliente->fecha_ingreso);
+                            $fecha = $CarbonFormat->format('M, d. Y');
                             $tel = substr($cliente->telefono, 0, 3) . " " . substr($cliente->telefono, 3, 4) . "-" . substr($cliente->telefono, 7);
                             @endphp
                                 <tr>
