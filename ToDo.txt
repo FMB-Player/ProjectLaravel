@@ -6,11 +6,11 @@ TODO:3. int                                   .DONE (edad@Cliente)
 TODO:4. bool                                  .DONE (seguro@Cliente)
 TODO:5. str                                   .DONE (nombre@Categoria_ingreso)
 TODO:6. str(email)                            .DONE (email@Cliente)
-TODO:7. select v option                       .IN_PROCESS (Soto) (Categoria@Cliente.edit)
-TODO:8. validate ALL (client optional)        .IN_PROCESS (Franco)
-TODO:9. view message process.                 .IN_PROCESS (Soto)
-TODO:10. buttons HOME, LIST, CREATE.          .IN_PROCESS (Soto)
-TODO:11. min 10 registers.                    .NOT_READY (Backend)
+TODO:7. select v option                       .DONE (Categoria@Cliente.edit)
+TODO:8. validate ALL (client optional)        .DONE
+TODO:9. view message process.                 .DONE
+TODO:10. buttons HOME, LIST, CREATE.          .DONE
+TODO:11. min 10 registers.                    .DONE
 
 TODO: + Documentation.
     Primero se iniciaría* una base de datos, en nuestro caso común mysql en XMAPP de manera local, esto para poder iniciar la primer migración al crear el proyecto con el comando de composer sin necesidad de ejecutar el comando "php artisan migrate" y más importante poder testear las vistas de forma directa, pero no es realmente necesario y solo es para probar que se puede servir el proyecto con "php artisan serve" y ver la vista welcome default de laravel.
@@ -36,15 +36,9 @@ tables:
         nombre  String
 
 views:
-    1.Cliente               .IN_PROCESS (Soto)
+    1.Cliente               .DONE
         index (table)
         create (form)
-        show (element)
-        edit (form)
-    2. Categoria_ingreso    .IN_PROCESS (Soto)
-        index (table)
-        create (form)
-        show (element)
         edit (form)
 
 
@@ -59,5 +53,3 @@ php artisan make:controller ClienteController --resource                        
 php artisan make:controller Categoria_ingresoController --resource                      .DONE
 
 php artisan migrate:fresh                                                               .NOT_STARTED
-
-TODO: Definir la ruta "/".
