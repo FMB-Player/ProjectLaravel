@@ -1,3 +1,6 @@
+@php
+    use Carbon\Carbon;
+@endphp
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -44,13 +47,17 @@
                         </thead>
                         <tbody>
                             @foreach($clientes as $cliente)
+                            @php
+                            $fechaCarbon = Carbon::createFromFormat('Y-m-d', $cliente->fecha_ingreso);
+                            $fecha = $fechaCarbon->format('M, d. Y');
+                            @endphp
                                 <tr>
                                     <td>{{ $cliente->nombre_cli }}</td>
                                     <td>{{ $cliente->edad }}</td>
                                     <td>{{ $cliente->seguro ? 'Sí' : 'No' }}</td>
                                     <td>{{ $cliente->telefono }}</td>
                                     <td>{{ $cliente->email }}</td>
-                                    <td>{{ $cliente->fecha_ingreso }}</td>
+                                    <td>{{ $fecha }}</td>
                                     <td>
                                         @switch($cliente->categoria_id)
                                             @case(1)

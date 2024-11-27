@@ -1,0 +1,11 @@
+header {
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu-elem {
+    text-transform: uppercase;
+    font-size: 25px;
+}

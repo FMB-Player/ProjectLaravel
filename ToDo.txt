@@ -52,4 +52,6 @@ php artisan make:model Categoria_ingreso                                        
 php artisan make:controller ClienteController --resource                                .DONE
 php artisan make:controller Categoria_ingresoController --resource                      .DONE
 
+composer require nesbot/carbon
+
 php artisan migrate:fresh                                                               .NOT_STARTED
