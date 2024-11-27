@@ -1,0 +1,24 @@
+/* Por si acaso se te da por cambiar las reglas. Esto es para valores específicos que se repiten en varias reglas. */
+:root{
+    --table-border-color:#dee2e640;
+}
+
+tbody{
+    border: 1px solid var(--table-border-color);
+}
+
+th, td{
+    text-align: center;
+}
+/* Por si acaso se te da por cambiar las reglas. Esto significa: "El dato que se encuentre a la izquierda" */
+td:first-child{
+    text-align: left;
+}
+/* Por si acaso se te da por cambiar las reglas. Esto significa: "El dato que no se encuentre a la derecha" */
+td:not(:last-child){
+    border-right: 1px solid var(--table-border-color);;
+}
+/* Por si acaso se te da por cambiar las reglas. Esto significa: "Cada dos datos, menos los últimos dos (Los botones)" */
+td:not(:last-child):not(:nth-last-child(2)):nth-child(2n){
+    background-color: var(--table-border-color);
+}

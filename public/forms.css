@@ -1,0 +1,26 @@
+.container {
+    margin-top: 5%;
+}
+
+.form-container {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.form-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+#header {
+    background-color: #212529;
+}
+
+a {
+    text-decoration: none;
+}

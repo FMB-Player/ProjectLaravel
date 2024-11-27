@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sistema de gestion de Clientes</title>
+        <title>Sistema de gestión de Clientes</title>
+        {{-- Bootstrap CSS --}}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset('table.css') }}">
     </head>
     <body>
     @include('header')
@@ -17,9 +19,9 @@
                 {{ session('error') }}
             </div>
         @endif
-        
+
         <div class="container">
-            <h1 class="text-center mt-3">Sistema de gestion de Clientes</h1>
+            <h1 class="text-center mt-3">Sistema de gestión de Clientes</h1>
             <div class="row">
                 <div class="col-md-12">
                     <a href="{{ route('clientes.crear') }}" class="btn btn-success">Crear Cliente Nuevo</a>
@@ -37,7 +39,7 @@
                                 <th scope="col">Email</th>
                                 <th scope="col">Fecha de Ingreso</th>
                                 <th scope="col">Categoría</th>
-                                <th scope="col">Acciones</th>
+                                <th scope="col" colspan="2">Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,6 +68,8 @@
                                     </td>
                                     <td>
                                         <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-primary">Editar</a>
+                                    </td>
+                                    <td>
                                         <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
