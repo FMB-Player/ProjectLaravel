@@ -1,4 +1,5 @@
 <head>
+    {{-- Local menu CSS --}}
     <link rel="stylesheet" href="{{ asset('menu.css') }}">
 </head>
 <header class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 border-bottom box-shadow" style="background-color: #f8f9fa; position: sticky; top: 0; z-index: 1000;">
