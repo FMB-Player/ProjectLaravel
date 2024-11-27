@@ -4,15 +4,15 @@
 
 .form-container {
     background-color: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 3em;
+    border-radius: 1em;
 }
 
 .form-header {
     background-color: #007bff;
     color: #fff;
-    padding: 10px;
-    border-radius: 10px 10px 0 0;
+    padding: 1em;
+    border-radius: 1em 1em 0 0;
     text-align: center;
     font-weight: bold;
 }
@@ -23,4 +23,15 @@
 
 a {
     text-decoration: none;
+}
+
+span {
+    display: inline-block;
+    color: #b1b1b1;
+    width: 2em;
+}
+
+#telefono {
+    display: inline-block;
+    width: calc(100% - 2em);
 }

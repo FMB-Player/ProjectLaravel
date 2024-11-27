@@ -51,12 +51,13 @@
                             @php
                             $fechaCarbon = Carbon::createFromFormat('Y-m-d', $cliente->fecha_ingreso);
                             $fecha = $fechaCarbon->format('M, d. Y');
+                            $tel = substr($cliente->telefono, 0, 3) . " " . substr($cliente->telefono, 3, 4) . "-" . substr($cliente->telefono, 7);
                             @endphp
                                 <tr>
                                     <td>{{ $cliente->nombre_cli }}</td>
                                     <td>{{ $cliente->edad }}</td>
                                     <td>{{ $cliente->seguro ? 'Sí' : 'No' }}</td>
-                                    <td>{{ $cliente->telefono }}</td>
+                                    <td>{{ $tel }}</td>
                                     <td>{{ $cliente->email }}</td>
                                     <td>{{ $fecha }}</td>
                                     <td>

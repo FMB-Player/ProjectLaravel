@@ -49,8 +49,8 @@
                                 <label class="form-check-label" for="seguro">Seguro</label>
                             </div>
                             <div class="form-group">
-                                <label for="telefono">Teléfono:</label>
-                                <input type="tel" name="telefono" id="telefono" class="form-control" required>
+                                <label for="telefono">Teléfono:</label> <br>
+                                <span>+54</span><input type="tel" name="telefono" id="telefono" class="form-control" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
