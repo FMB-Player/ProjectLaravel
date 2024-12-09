@@ -21,6 +21,6 @@ class Clientes extends Model
 
     public function ingresos()
 {
-    return $this->belongsToMany(Ingresos::class, 'categorias_ingresos', 'cliente_id', 'ingreso_id');
+    return $this->belongsTo(Ingresos::class, 'categorias_ingresos', 'cliente_id', 'ingreso_id');
 }
 }

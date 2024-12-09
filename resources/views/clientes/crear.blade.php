@@ -22,11 +22,11 @@
         </div>
     @endif
 
-    @if (session('success'))
+    {{-- @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
-    @endif
+    @endif --}}
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -34,11 +34,11 @@
                         <div class="form-header" id="header">
                             Registrar Nuevo Cliente
                         </div>
-                        <form action="{{ route('clientes.guardar') }}" method="POST" class="needs-validation" novalidate>
+                        <form action="{{ route('clientes.guardar') }}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <label for="nombre_cli">Nombre:</label>
-                                <input type="text" name="nombre_cli" id="nombre_cli" class="form-control" required>
+                                <input type="text" name="nombre_cli" id="nombre_cli" class="form-control" required autocomplete="name">
                             </div>
                             <div class="form-group">
                                 <label for="edad">Edad:</label>
@@ -50,11 +50,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Teléfono:</label> <br>
-                                <span>+54</span><input type="tel" name="telefono" id="telefono" class="form-control" required>
+                                <span>+54</span><input type="tel" name="telefono" id="telefono" class="form-control" autocomplete="tel-area-code" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" name="email" id="email" class="form-control" required>
+                                <input type="email" name="email" id="email" class="form-control" autocomplete="email" required>
                             </div>
                             <div class="form-group">
                                 <label for="fecha_ingreso">Fecha de Ingreso:</label>

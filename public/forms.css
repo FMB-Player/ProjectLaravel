@@ -35,3 +35,16 @@ span {
     display: inline-block;
     width: calc(100% - 2em);
 }
+
+/* Esto marca cuando una entrada es invalida. En este estado, marca TODO campo inválido desde el momento 1, es decir, desde el principio (Ya marca todo rojo de antemano, no cuando se intente confirmar) PERO, se actualiza en tiempo real porque usa pseudo-clases del navegador propio. Pero sirve para mostrar el concepto de la verificación default del navegador. */
+/* El focus solo hace que se ignore el destaque default del navegador. el primero actúa en general, el segundo es para mantener el borde que indica el campo inválido */
+/* input:invalid, select:invalid{
+    border: 1px solid red;
+}
+input:focus, select:focus {
+    box-shadow: none !important;
+    border: 1px solid;
+}
+input:invalid:focus, select:invalid:focus {
+    border-color: red;
+} */
