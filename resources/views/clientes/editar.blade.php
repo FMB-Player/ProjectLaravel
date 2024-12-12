@@ -50,11 +50,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="telefono">Teléfono:</label> <br>
-                                <span>+54</span><input type="tel" name="telefono" id="telefono" class="form-control" value="{{ $cliente->telefono }}" autocomplete="tel-area-code" required>
+                                <span>+54</span><input type="tel" name="telefono" id="telefono" class="form-control" value="{{ $cliente->telefono }}" placeholder="012 1234-5678" autocomplete="tel-area-code" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
-                                <input type="email" name="email" id="email" class="form-control" value="{{ $cliente->email }}" autocomplete="email" required>
+                                <input type="email" name="email" id="email" class="form-control" value="{{ $cliente->email }}" placeholder="email@example.com" autocomplete="email" required>
                             </div>
                             <div class="form-group">
                                 <label for="fecha_ingreso">Fecha de Ingreso:</label>
