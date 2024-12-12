@@ -43,7 +43,7 @@
                                     <th scope="col">Nombre</th>
                                     <th scope="col">Edad</th>
                                     <th scope="col">Seguro</th>
-                                    <th scope="col">Teléfono</th>
+                                    <th scope="col">Teléfono (+54)</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Fecha de Ingreso</th>
                                     <th scope="col">Categoría</th>
