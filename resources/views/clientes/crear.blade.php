@@ -1,3 +1,7 @@
+@php
+    use Carbon\Carbon;
+    // Carbon se usa para obtener la fecha actual y ponerla como valor predeterminado para la fecha.
+@endphp
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -57,7 +61,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="fecha_ingreso">Fecha de Ingreso:</label>
-                                <input type="date" name="fecha_ingreso" id="fecha_ingreso" class="form-control" required>
+                                <input type="date" name="fecha_ingreso" id="fecha_ingreso" class="form-control" value="{{ Carbon::now()->format('Y-m-d'); }}" required>
+                                {{--
+                                    El value significa que el campo se llenará con la fecha actual en formato "yyyy-mm-dd". "Y" es año en 4 dígitos, "m" es mes en 2 dígitos y "d" es día en 2 dígitos.
+                                    Para testear, se puede usar la consola del navegador y probar:
+                                    console.log(document.getElementById('fecha_ingreso').value);
+                                --}}
                             </div>
                             <div class="form-group">
                                 <label for="categoria_id">Categoría de Ingreso:</label>
