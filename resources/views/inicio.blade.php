@@ -1,5 +1,6 @@
 @php
     use Carbon\Carbon;
+    // Carbon es una librería estándar de PHP para trabajar con fechas y horas.
 @endphp
 <!DOCTYPE html>
 <html lang="es">
